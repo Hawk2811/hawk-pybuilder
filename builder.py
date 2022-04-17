@@ -24,12 +24,12 @@ def main(): #Main of Program
             usage()
             sys.exit()
         else:#If true create a new project
-            if os.name == "nt":
-                os.mkdir(sys.argv[2])
+            if os.name == "nt": # If Program running on Windows Platforms
+                os.mkdir(sys.argv[2]) 
                 os.mkdir(sys.argv[2] + "/src")
                 os.system("python -m venv " + sys.argv[2] + "/env")
                 os.system("echo. >" + sys.argv[2] + "/src/main.py")               
-            else:
+            else: # on UNIX-Based Platforms(macOS, linux, BSDs, etc)
                 os.mkdir(sys.argv[2])
                 os.mkdir(sys.argv[2] + "/src")
                 os.system("python3 -m venv " + sys.argv[2] + "/env")
